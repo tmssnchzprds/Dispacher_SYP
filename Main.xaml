@@ -1,9 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_Type="[New Random().Next(1, 3)]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:APP_SYP;assembly=APP_SYP" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_Type="[New Random().Next(1, 3)]" this:Main.index="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:APP_SYP;assembly=APP_SYP" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file." Name="in_OrchestratorQueueName" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file." Name="in_OrchestratorQueueFolder" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Type" Type="InArgument(x:Int32)" />
+    <x:Property Name="index" Type="InArgument(x:Int32)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -132,7 +133,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <StateMachine InitialState="{x:Reference __ReferenceID1}" sap2010:Annotation.AnnotationText="Plantilla del Marco Empresarial Robótico&#xA;&#xA;1. Revisa el archivo Data/Config.xlsx y agrega/personaliza cualquier campo o valor requerido.&#xA;2. Implementa los workflows OpenApp y CloseApp, enlazándolos en los campos correspondientes de Config.xlsx.&#xA;3. Implementa los workflows GetTransactionData y SetTransactionStatus, o utiliza las versiones del Framework para las colas de Orchestrator.&#xA;4. Implementa el workflow ProcessTransaction y cualquier otro workflow que sea invocado.&#xA;&#xA; - Basado en la plantilla Transactional Business Process.&#xA; - Utiliza un diseño de State Machine para las fases del proyecto de automatización.&#xA; - Ofrece manejo avanzado de excepciones y recuperación de aplicaciones.&#xA; - Mantiene configuraciones externas en el archivo Config.xlsx y recursos de Orchestrator.&#xA; - Recupera credenciales desde Credential Manager y recursos de Orchestrator.&#xA; - Obtiene datos transaccionales de la cola de Orchestrator y actualiza los estados.&#xA; - Guarda capturas de pantalla y mensajes de error en caso de excepciones en aplicaciones.&#xA; - Ejecuta una aplicación de ejemplo de Notepad con datos de Excel ficticios." DisplayName="General Business Process " sap:VirtualizedContainerService.HintSize="880,284" sap2010:WorkflowViewState.IdRef="StateMachine_2">
+  <StateMachine InitialState="{x:Reference __ReferenceID1}" sap2010:Annotation.AnnotationText="Plantilla del Marco Empresarial Robótico&#xA;&#xA;1. Revisa el archivo Data/Config.xlsx y agrega/personaliza cualquier campo o valor requerido.&#xA;2. Implementa los workflows OpenApp y CloseApp, enlazándolos en los campos correspondientes de Config.xlsx.&#xA;3. Implementa los workflows GetTransactionData y SetTransactionStatus, o utiliza las versiones del Framework para las colas de Orchestrator.&#xA;4. Implementa el workflow ProcessTransaction y cualquier otro workflow que sea invocado.&#xA;&#xA; - Basado en la plantilla Transactional Business Process.&#xA; - Utiliza un diseño de State Machine para las fases del proyecto de automatización.&#xA; - Ofrece manejo avanzado de excepciones y recuperación de aplicaciones.&#xA; - Mantiene configuraciones externas en el archivo Config.xlsx y recursos de Orchestrator.&#xA; - Recupera credenciales desde Credential Manager y recursos de Orchestrator.&#xA; - Obtiene datos transaccionales de la cola de Orchestrator y actualiza los estados.&#xA; - Guarda capturas de pantalla y mensajes de error en caso de excepciones en aplicaciones.&#xA; - Ejecuta una aplicación de ejemplo de Notepad con datos de Excel ficticios." DisplayName="General Business Process " sap:VirtualizedContainerService.HintSize="577.6,333.6" sap2010:WorkflowViewState.IdRef="StateMachine_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -143,7 +144,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="**Filtrar correos electrónicos, guardar adjuntos de Excel y cargar todos los datos en una cola de transacciones de Orchestrator:**&#xA; - Consulta Dispatcher/FetchAttachments que filtra los correos de la bandeja de entrada utilizando Config(&quot;EmailFilter&quot;) y descarga los adjuntos.&#xA; - Consulta Dispatcher/OnloadQueue que carga los datos de los archivos Excel en una cola, rastreando a qué archivo y fila pertenecen." DisplayName="Obtención de Datos Transaccionales" sap:VirtualizedContainerService.HintSize="360,220" sap2010:WorkflowViewState.IdRef="State_8">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="**Filtrar correos electrónicos, guardar adjuntos de Excel y cargar todos los datos en una cola de transacciones de Orchestrator:**&#xA; - Consulta Dispatcher/FetchAttachments que filtra los correos de la bandeja de entrada utilizando Config(&quot;EmailFilter&quot;) y descarga los adjuntos.&#xA; - Consulta Dispatcher/OnloadQueue que carga los datos de los archivos Excel en una cola, rastreando a qué archivo y fila pertenecen." DisplayName="Obtención de Datos Transaccionales" sap:VirtualizedContainerService.HintSize="585.6,1804.8" sap2010:WorkflowViewState.IdRef="State_8">
       <State.Entry>
         <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Reset Transaction Data" sap:VirtualizedContainerService.HintSize="540.8,1308" sap2010:WorkflowViewState.IdRef="Sequence_60">
           <Sequence.Variables>
@@ -336,9 +337,7 @@
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Transition.Condition>
-            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="vStrId IsNot Nothing" />
-          </Transition.Condition>
+          <Transition.Condition>[vStrId IsNot Nothing]</Transition.Condition>
           <Transition.To>
             <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="**Reensamblar los archivos de Excel con estados desde la cola secundaria y enviarlos cuando estén completos por correo electrónico:**&#xA; - Consulta el ejemplo Dispatcher/OffloadQueue que guarda elementos de una cola en archivos de Excel usando un encabezado ExcelTemplate.xlsx.&#xA; - Consulta Dispatcher/SendStatusEmail que utiliza un archivo EmailTemplate.txt con String.Format para el cuerpo del mensaje." DisplayName="Procesamiento de Transacciones" sap:VirtualizedContainerService.HintSize="560,168" sap2010:WorkflowViewState.IdRef="State_9">
               <State.Entry>
@@ -964,9 +963,7 @@
           <Transition.Action>
             <ui:LogMessage DisplayName="Log No More" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;No more data to process...&quot;+&quot;Process finished due to no more transaction data&quot;]" />
           </Transition.Action>
-          <Transition.Condition>
-            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="vStrId Is Nothing" />
-          </Transition.Condition>
+          <Transition.Condition>[vStrId Is Nothing]</Transition.Condition>
         </Transition>
       </State.Transitions>
     </State>
@@ -993,11 +990,6 @@
       <Variable x:TypeArguments="x:String" Name="vstrPopularity" />
       <Variable x:TypeArguments="x:String" Name="vStrName" />
       <Variable x:TypeArguments="x:String" Name="vStrId" />
-      <Variable x:TypeArguments="x:Int32" Name="index">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

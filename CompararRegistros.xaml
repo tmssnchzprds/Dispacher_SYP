@@ -136,7 +136,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="1213.6000000000001,3989.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="1213.6000000000001,2911.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="vdtEncontrado" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="vParam" />
@@ -146,9 +146,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleWhile Condition="[index &lt;= inArrStr.Length - 1]" CurrentIndex="[index]" DisplayName="While" sap:VirtualizedContainerService.HintSize="702.4,1589.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="635.2,2888" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,1443.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,2750.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="Queue" />
             <Variable x:TypeArguments="x:Boolean" Name="vBoolEncontrado" />
@@ -157,9 +157,10 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="568,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="568,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
             <Assign.To>
               <OutArgument x:TypeArguments="scg:IEnumerable(ui:QueueItem)">[Queue]</OutArgument>
             </Assign.To>
@@ -167,10 +168,10 @@
               <InArgument x:TypeArguments="scg:IEnumerable(ui:QueueItem)">[New List(Of QueueItem) From { }]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="568,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="568,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
                   <ui:AssignOperation.To>
                     <OutArgument x:TypeArguments="x:String">[outStrId]</OutArgument>
                   </ui:AssignOperation.To>
@@ -178,7 +179,7 @@
                     <InArgument x:TypeArguments="x:String">[inArrStr(index).Split(New String() {"""id"":"}, StringSplitOptions.None)(1).Split(","c)(0)]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
                   <ui:AssignOperation.To>
                     <OutArgument x:TypeArguments="x:String">[outStrName]</OutArgument>
                   </ui:AssignOperation.To>
@@ -186,7 +187,7 @@
                     <InArgument x:TypeArguments="x:String">[inArrStr(index).Split(New String() {If(in_Type=1,"""original_name"":""","""original_title"":""")}, StringSplitOptions.None)(1).Split("""", StringSplitOptions.None)(0)]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
                   <ui:AssignOperation.To>
                     <OutArgument x:TypeArguments="x:String">[outStrPopularity]</OutArgument>
                   </ui:AssignOperation.To>
@@ -194,7 +195,7 @@
                     <InArgument x:TypeArguments="x:String">[inArrStr(index).Split(New String() {"""popularity"":"}, StringSplitOptions.None)(1).Split("}"c)(0)]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
                   <ui:AssignOperation.To>
                     <OutArgument x:TypeArguments="x:Boolean">[vBoolEncontrado]</OutArgument>
                   </ui:AssignOperation.To>
@@ -204,26 +205,38 @@
                 </ui:AssignOperation>
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" sap:VirtualizedContainerService.HintSize="568,175.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_2" QueueItemStates="New, Successful" QueueName="[Config(&quot;InputQueue&quot;).ToString]" Reference="[outStrId]" Result="[Queue]" />
-          <ui:InterruptibleWhile Condition="[index2&lt;Queue.Count]" CurrentIndex="[index2]" DisplayName="While" sap:VirtualizedContainerService.HintSize="568,557.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+          <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" sap:VirtualizedContainerService.HintSize="568,175.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="New" QueueName="[Config(&quot;InputQueue&quot;).ToString]" Reference="[outStrId]" Result="[Queue]" />
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="568,1637.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="534.4,411.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="534.4,1491.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[(Queue(index2).SpecificContent(&quot;ID&quot;).ToString.Equals(outStrId) AndAlso Queue(index2).SpecificContent(&quot;Type&quot;).ToString.Equals(in_Type.ToString))]" sap:VirtualizedContainerService.HintSize="500.8,351.2" sap2010:WorkflowViewState.IdRef="If_4">
+                <If Condition="[(Queue(index2).SpecificContent(&quot;ID&quot;).ToString.Equals(outStrId) AndAlso Queue(index2).SpecificContent(&quot;Type&quot;).ToString.Equals(in_Type.ToString))]" sap:VirtualizedContainerService.HintSize="500.8,416.8" sap2010:WorkflowViewState.IdRef="If_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,221.6" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_14">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Boolean">[vBoolEncontrado]</OutArgument>
                         </Assign.To>
@@ -231,10 +244,11 @@
                           <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                         </Assign.Value>
                       </Assign>
+                      <ui:Break DisplayName="Interrumpir" sap:VirtualizedContainerService.HintSize="433.6,48" sap2010:WorkflowViewState.IdRef="Break_4" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_26">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="vDT" />
                       </Sequence.Variables>
@@ -247,8 +261,85 @@
                     </Sequence>
                   </If.Else>
                 </If>
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="500.8,115.2" sap2010:WorkflowViewState.IdRef="Assign_12">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[vParam]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" xml:space="preserve">[New Dictionary(Of String, Object) From {
+    {"@idSeropel", CInt(outStrID)},
+    {"@tipo", in_Type}
+}]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <a:ConsultarDB sap:VirtualizedContainerService.HintSize="500.8,434.4" sap2010:WorkflowViewState.IdRef="ConsultarDB_3" inDatabase="[Config.Item(&quot;DB-Database&quot;).ToString]" inParameters="[vParam]" inPassword="[Config.Item(&quot;DB-Password&quot;).ToString]" inSQL="[Config.Item(&quot;SQL-SelectSeropel&quot;).ToString]" inServer="[Config.Item(&quot;DB-Server&quot;).ToString]" inUser="[Config.Item(&quot;DB-User&quot;).ToString]" outResult="[vdtEncontrado]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </a:ConsultarDB>
+                <If Condition="[vdtEncontrado.Rows.Count=0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="500.8,360" sap2010:WorkflowViewState.IdRef="If_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[vBoolEncontrado]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="500.8,104.8" sap2010:WorkflowViewState.IdRef="Assign_10">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[index2]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[index2+1]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
               </Sequence>
             </ui:InterruptibleWhile.Body>
+            <ui:InterruptibleWhile.Condition>
+              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="index2&lt;Queue.Count" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_4" />
+            </ui:InterruptibleWhile.Condition>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -256,19 +347,27 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InterruptibleWhile>
-          <If Condition="[Not vBoolEncontrado]" sap:VirtualizedContainerService.HintSize="568,294.4" sap2010:WorkflowViewState.IdRef="If_5">
+          <If Condition="[Not vBoolEncontrado]" sap:VirtualizedContainerService.HintSize="568,416.8" sap2010:WorkflowViewState.IdRef="If_8">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,221.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Break DisplayName="Interrumpir" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Break_2" />
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[index+1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:Break DisplayName="Interrumpir" sap:VirtualizedContainerService.HintSize="433.6,48" sap2010:WorkflowViewState.IdRef="Break_3" />
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -278,195 +377,19 @@
               </Sequence>
             </If.Else>
           </If>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="568,104.8" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[index+1]</InArgument>
+            </Assign.Value>
+          </Assign>
         </Sequence>
       </ui:InterruptibleWhile.Body>
+      <ui:InterruptibleWhile.Condition>
+        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="index &lt; inArrStr.Length" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+      </ui:InterruptibleWhile.Condition>
     </ui:InterruptibleWhile>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[index]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="702.4,2376.8" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[inArrStr]">
-      <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="x:String">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="668.8,2239.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="Queue" />
-              <Variable x:TypeArguments="x:Boolean" Name="vBoolEncontrado" />
-              <Variable x:TypeArguments="x:Int32" Name="index2" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="635.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
-              <Assign.To>
-                <OutArgument x:TypeArguments="scg:IEnumerable(ui:QueueItem)">[Queue]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="scg:IEnumerable(ui:QueueItem)">[New List(Of QueueItem) From { }]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="635.2,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-              <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[outStrId]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[CurrentText.Split(New String() {"""id"":"}, StringSplitOptions.None)(1).Split(","c)(0)]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[outStrName]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[CurrentText.Split(New String() {If(in_Type=1,"""original_name","original_title"":""")}, StringSplitOptions.None)(1).Split("""", StringSplitOptions.None)(0)]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[outStrPopularity]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[CurrentText.Split(New String() {"""popularity"":"}, StringSplitOptions.None)(1).Split("}"c)(0)]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[vBoolEncontrado]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                </scg:List>
-              </ui:MultipleAssign.AssignOperations>
-            </ui:MultipleAssign>
-            <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" sap:VirtualizedContainerService.HintSize="635.2,175.2" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New, Successful" QueueName="[Config(&quot;InputQueue&quot;).ToString]" Reference="[outStrId]" Result="[Queue]" />
-            <ui:InterruptibleWhile Condition="[index2&lt;Queue.Count]" CurrentIndex="[index2]" DisplayName="While" sap:VirtualizedContainerService.HintSize="635.2,1353.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
-              <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,1207.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[(Queue(index2).SpecificContent(&quot;ID&quot;).ToString.Equals(outStrId) AndAlso Queue(index2).SpecificContent(&quot;Type&quot;).ToString.Equals(in_Type.ToString))]" sap:VirtualizedContainerService.HintSize="568,1147.2" sap2010:WorkflowViewState.IdRef="If_2">
-                    <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,960.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="500.8,115.2" sap2010:WorkflowViewState.IdRef="Assign_5">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[vParam]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" xml:space="preserve">[New Dictionary(Of String, Object) From {
-    {"@idSeropel", outStrID},
-    {"@tipo", in_Type}
-}]</InArgument>
-                          </Assign.Value>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Assign>
-                        <a:ConsultarDB sap:VirtualizedContainerService.HintSize="500.8,434.4" sap2010:WorkflowViewState.IdRef="ConsultarDB_1" inDatabase="[Config.Item(&quot;DB-Database&quot;).ToString]" inParameters="[vParam]" inPassword="[Config.Item(&quot;DB-Password&quot;).ToString]" inSQL="[Config.Item(&quot;SQL-SelectSeropel&quot;).ToString]" inServer="[Config.Item(&quot;DB-Server&quot;).ToString]" inUser="[Config.Item(&quot;DB-User&quot;).ToString]" outResult="[vdtEncontrado]">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </a:ConsultarDB>
-                        <If Condition="[vdtEncontrado.Rows.Count=0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="500.8,351.2" sap2010:WorkflowViewState.IdRef="If_7">
-                          <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_2">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:Boolean">[vBoolEncontrado]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </Sequence>
-                          </If.Else>
-                        </If>
-                      </Sequence>
-                    </If.Then>
-                    <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="sd:DataTable" Name="vDT" />
-                        </Sequence.Variables>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </If.Else>
-                  </If>
-                </Sequence>
-              </ui:InterruptibleWhile.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:InterruptibleWhile>
-            <If Condition="[Not vBoolEncontrado]" sap:VirtualizedContainerService.HintSize="635.2,294.4" sap2010:WorkflowViewState.IdRef="If_3">
-              <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:Break DisplayName="Interrumpir" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Break_1" />
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </If.Else>
-            </If>
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEach.Body>
-    </ui:ForEach>
   </Sequence>
 </Activity>
