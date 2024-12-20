@@ -1,9 +1,11 @@
 {
-  "name": "RFW-Dispatcher",
+  "name": "SYP-Dispatcher",
   "projectId": "0898d442-b4bb-415a-8d89-c44fa0ded025",
   "description": "Robotic Enterprise Framework Dispatcher",
   "main": "Main.xaml",
   "dependencies": {
+    "APP_SYP": "[1.2.6]",
+    "COM_SYP": "[1.2.0]",
     "UiPath.Credentials.Activities": "2.1.0",
     "UiPath.Excel.Activities": "2.24.4",
     "UiPath.Mail.Activities": "1.24.11",
@@ -16,7 +18,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "24.10.8.0",
-  "projectVersion": "1.0.0.0",
+  "projectVersion": "1.2.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -47,13 +49,20 @@
     },
     "fileInfoCollection": [],
     "modernBehavior": false,
-    "saveToCloud": false
+    "saveToCloud": false,
+    "cloudProjectUrl": "https://cloud.uipath.com/mb3gestion/studio_/designer/6abd588c-9adb-4e8a-a6cc-0aed76a37fd9"
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
       "uniqueId": "4904d5cd-40e0-4ff0-9aa1-ce6c8a120b26",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "CompararRegistros.xaml",
+      "uniqueId": "f669a211-56e9-42a1-8e00-afb29d25a02d",
       "input": [],
       "output": []
     }

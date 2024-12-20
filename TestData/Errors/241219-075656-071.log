@@ -1,0 +1,13 @@
+Error starting process
+For Each currentText
+Object reference not set to an instance of an object.
+   at UiPath.Core.Activities.ForEachHelper.GetValuesEnumerator[T](IEnumerable values)
+   at UiPath.Core.Activities.ForEachBase`1.StartLoop(NativeActivityContext context)
+   at UiPath.Core.Activities.InterruptibleLoopBase.Execute(NativeActivityContext context)
+   at System.Activities.NativeActivity.InternalExecute(ActivityInstance instance, ActivityExecutor executor, BookmarkManager bookmarkManager)
+   at System.Activities.Runtime.ActivityExecutor.ExecuteActivityWorkItem.ExecuteBody(ActivityExecutor executor, BookmarkManager bookmarkManager, Location resultLocation)
+--- End of stack trace from previous location ---
+   at UiPath.Executor.BaseRunner.EndExecute(IAsyncResult result)
+   at UiPath.Executor.InProcessRunner.EndExecute(IAsyncResult result)
+   at UiPath.Core.Activities.ExecutorInvokeActivity.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+   at System.Activities.AsyncCodeActivity.CompleteAsyncCodeActivityData.CompleteAsyncCodeActivityWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
